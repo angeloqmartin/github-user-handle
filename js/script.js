@@ -1,9 +1,14 @@
 function getRepos(username){
     fetch(`https://api.github.com/users/${username}/repos`)
-    .then(response => response.json())
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } throw new err(response.statusText);
+    })
     .then(responseJson => displayRepos(responseJson))
-    .catch(error => alert('Something went wrong. Try again later.'));
-}
+    .catch(err => {
+        $('#js-error-message').text(`Something went wrong: ${err.message}`)
+    });}
 
 function displayRepos (responseJson) {
     const repoObj = responseJson.map(item => 
