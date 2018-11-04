@@ -1,14 +1,3 @@
-// /users/:username/repos
-
-// https://api.github.com/users/{user}/repos{?type,page,per_page,sort}
-// The repos associated with that handle must be displayed on the page
-    //repo name
-    //link to the repo URL
-
-// The user must be able to make multiple searches and see only the results for the current search.
-// creat a var named :username
-
-
 function getRepos(username){
     fetch(`https://api.github.com/users/${username}/repos`)
     .then(response => response.json())
