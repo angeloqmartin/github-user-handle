@@ -1,0 +1,15 @@
+h1 {
+    border-bottom: black solid 2px;
+}
+
+.wrapper{
+    width: 80%;
+    margin: auto;
+}
+
+.result-list li {
+    margin-bottom: 20px;
+}
+.result-list a {
+font-size: 0.80em;
+}
